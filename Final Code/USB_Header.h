@@ -1,43 +1,43 @@
 /**********************************************************************************************************
- * Name:         USB_Header.h																			  *
- * Author:       Neel Desai, University of Colorado - Boulder											  *
- * Date:         04/19/2014																				  *
+ * Name:         USB_Header.h                                                                             *
+ * Author:       Neel Desai, University of Colorado - Boulder                                             *
+ * Date:         04/19/2014                                                                               *
  * Description:  -> The file contains the function declarations and macros used in the USB_Header.c code. *
  *               -> The code in USB_Header.c file is written such that it configures the camera to send   *
- *                  data for 160x120 uncompressed frames in the YUV 422 format. 						  *
- *               																						  * 																			
+ *                  data for 160x120 uncompressed frames in the YUV 422 format.                           *
+ *                                                                                                        *
  *********************************************************************************************************/
 
 
 
 /************************************************************
- * 															*
- * 							MACROS							*
- * 															*
+ *                                                          *
+ *                          MACROS                          *
+ *                                                          *
  ***********************************************************/
 
 /************ Control Transfer related macros **************/
 
-#define USB_DIRECTION_OUT         						0x21
-#define USB_DIRECTION_IN          						0xA1
-#define USB_SET_CURRENT           						0x01
-#define USB_GET_CURRENT           						0x81
-#define USB_SETUP_PACKET_INDEX    						0x01
-#define CONTROL_TRANSFER_ENDPOINT 						0x00
-#define UVC_VS_PROBE_CONTROL    		    			0x100   
-#define UVC_VS_COMMIT_CONTROL							0x200
+#define USB_DIRECTION_OUT                               0x21
+#define USB_DIRECTION_IN                                0xA1
+#define USB_SET_CURRENT                                 0x01
+#define USB_GET_CURRENT                                 0x81
+#define USB_SETUP_PACKET_INDEX                          0x01
+#define CONTROL_TRANSFER_ENDPOINT                       0x00
+#define UVC_VS_PROBE_CONTROL                            0x100   
+#define UVC_VS_COMMIT_CONTROL                           0x200
 #define dwFrameInterval                                 0x01
 #define UNCOMPRESSED_FRAMES                             0x00
-#define RESOLUTION                                      0x02     			/* 0x02 - 160x120 resolution; 0x04 - 320x240 resolution */
-#define NO												0x00
+#define RESOLUTION                                      0x02                /* 0x02 - 160x120 resolution; 0x04 - 320x240 resolution */
+#define NO                                              0x00
 
 /************ Isochronous Transfer related macros ***********/
 
 #define ISOCHRONOUS_TRANSFER_ENDPOINT_INTERFACE_1       0x81
-#define NUMBER_OF_ISOCHRONOUS_PACKETS       			12
+#define NUMBER_OF_ISOCHRONOUS_PACKETS                   12
 #define HEADER_LENGTH                                   12
-#define ISOCHRONOUS_BUFFER_SIZE             			944
-#define ISOCHRONOUS_TRANSFER_LENGTH         			11328      			/*944*12 */
+#define ISOCHRONOUS_BUFFER_SIZE                         944
+#define ISOCHRONOUS_TRANSFER_LENGTH                     11328               /*944*12 */
 #define NO_OF_TRANSFERS                                 5
 #define HRES                                            160
 #define VRES                                            120
@@ -47,9 +47,9 @@
 #define INTERFACE                                       1
 #define ALTERNATE_INTERFACE                             6
 #define FRAME_COUNT                                     500
-#define FPS_30_DATA_4                                   0b00010101         	/* LSB */
-#define FPS_30_DATA_5                                   0b00010110 			/* The value of the 3 byte integer equals (1/frame rate) in multiples of 100 ns */
-#define FPS_30_DATA_6                                   0b00000101 			/* MSB */
+#define FPS_30_DATA_4                                   0b00010101          /* LSB */
+#define FPS_30_DATA_5                                   0b00010110          /* The value of the 3 byte integer equals (1/frame rate) in multiples of 100 ns */
+#define FPS_30_DATA_6                                   0b00000101          /* MSB */
 #define FPS_15_DATA_4                                   0b00101010
 #define FPS_15_DATA_5                                   0b00101100
 #define FPS_15_DATA_6                                   0b00001010
@@ -61,9 +61,9 @@
 #define FPS_05_DATA_6                                   0b00011110
 
 /************************************************************
- * 															*
- * 							FUNCTIONS						*
- * 															*
+ *                                                          *
+ *                          FUNCTIONS                       *
+ *                                                          *
  ***********************************************************/
 
 /***************** Camera related functions ****************/
